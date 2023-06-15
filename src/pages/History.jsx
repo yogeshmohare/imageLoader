@@ -43,15 +43,24 @@ const History = () => {
       {/* History  */}
       <div className="">
         <div>
-          <button
-            className="rounded-lg bg-blue-600 p-2 my-2 text-white border-spacing-2 border-solid border-2 border-sky-100"
-            onClick={() => clearData()}
-          >
-            Clear Data
-          </button>
+          {imageList && imageList.length > 0 ? (
+            <button
+              className="rounded-lg bg-blue-600 p-2 my-2 text-white border-spacing-2 border-solid border-2 border-sky-100"
+              onClick={() => clearData()}
+            >
+              Clear Data
+            </button>
+          ) : (
+            <div className="w-ful m-auto bg-slate-100 p-2 md:p-5">
+              <h5 className="ml-4 mt-2 font-semibold text-xl text-center text-gray-600">
+                <strong>No history available </strong>
+              </h5>
+            </div>
+          )}
         </div>
         <div className="mb-10 grid md:grid-cols-2 lg:grid-cols-3 lg:gap-3 justify-items-center content-start">
           {imageList &&
+            imageList.length > 0 &&
             imageList.map((img, index) => {
               return (
                 <>
@@ -68,7 +77,7 @@ const History = () => {
                     />
                     <div className="flex justify-between">
                       <h5 className="ml-4 mt-4 font-semibold">
-                        Price {img.price}
+                        Price {img.price}₹
                       </h5>
                       {img.count !== 0 ? (
                         <div className="">

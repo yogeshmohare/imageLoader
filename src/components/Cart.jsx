@@ -110,18 +110,20 @@ const Cart = () => {
                 </h5>
               </>
             )}
-            <li
-              className="rounded my-2 h-12 overflow-hidden shadow-xl shadow-slate-300 bg-gray-100 
+            {cartData.length > 0 &&(
+              <li
+                className="rounded my-2 h-12 overflow-hidden shadow-xl shadow-slate-300 bg-gray-100 
                   border-sky-300 border-l-1  w-full md:w-11/12	 lg:w-3/4 m-auto items-center justify-end pr-5 md:px-5
                   cursor-pointer flex"
-            >
-              <div className=" text-center">
-                <h5 className="mx-2 font-semibold text-blue-400">
-                  Sub-Total :-
-                </h5>
-              </div>
-              <h5 className=" font-bold">{totalCartValue}₹</h5>
-            </li>
+              >
+                <div className=" text-center">
+                  <h5 className="mx-2 font-semibold text-blue-400">
+                    Sub-Total :-
+                  </h5>
+                </div>
+                <h5 className=" font-bold">{totalCartValue}₹</h5>
+              </li>
+            )}
           </ul>
         </div>
       </div>

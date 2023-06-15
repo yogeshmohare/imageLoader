@@ -54,7 +54,7 @@ const Home = () => {
           className="rounded-lg bg-blue-600 p-2 my-2 text-white border-spacing-2 border-solid border-2 border-sky-100 float-right"
           onClick={() => fetchImageData()}
         >
-          New image
+          Next image
         </button>
       </div>
     </div>
