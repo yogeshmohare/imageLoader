@@ -54,7 +54,7 @@ const Header = () => {
         <ul
           className={`duration-500 md:hidden gap-8 md:  bg-blue-400 fixed  top-[90px] ${
             !toggle ? "left-[-100%]" : "left-0"
-          } w-full`}
+          } w-full z-10`}
         >
           <li
             className="text-white p-2 ml-8 font-semibold hover:text-blue-500"
