@@ -12,17 +12,27 @@ const Home = () => {
   const fetchImageData = async () => {
     try {
       const result = await axios.get(baseUrl);
-      console.log("Res", result);
       const imgUrl = result.data.message;
       setImageUrl(imgUrl);
       const Imglist = JSON.parse(localStorage.getItem("imageList"));
+      // pricing
+      let price = Math.floor(Math.random() * 50 + 1);
+      const imgDetails = {
+        isAdd: false,
+        price: price,
+        count: 0,
+        totalPrice: 0,
+        id: Date.now(),
+      };
       if (Imglist) {
-        Imglist.push(imgUrl);
+        imgDetails["url"] = imgUrl;
+        Imglist.push(imgDetails);
         localStorage.setItem("imageList", JSON.stringify(Imglist));
       } else {
         localStorage.clear();
         const newImgList = [];
-        newImgList.push(imgUrl);
+        imgDetails["url"] = imgUrl;
+        newImgList.push(imgDetails);
         localStorage.setItem("imageList", JSON.stringify(newImgList));
       }
     } catch (err) {
