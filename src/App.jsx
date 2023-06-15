@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route exact path="/imageLoader" element={<Home />}></Route>
         <Route path="/history" element={<History />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="*" element={<Home />}></Route>
